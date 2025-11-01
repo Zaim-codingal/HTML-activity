@@ -4,8 +4,83 @@
         <meta charset ="UTF-8">
         <meta name="viewport" content="width=device-width", initial-scale="1.0">
         <title> Surgery and CSS Positioning Styling </title>
-        <style>
+        <style> 
+            body{
+                font-family: poppins, sans-serif;
+                background : linear-gradient(to right, green,lime);
+                margin : 0;
+                padding : 0;
+            }
+            header{
+                position:fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                background-color : darkgreen;
+                color : white;
+                text-align : center;
+                padding : 15px 0;
+                font-size: 1.6rem;
+                z-index : 100;
+                opacity : 0.95;
+            }
+            main{
+                padding : 100px 20px 50px 20px;
+            }
 
+            .section{
+                padding : 20px;
+                margin-bottom: 15px;
+                background-color:yellowgreen;
+                border-radius:10px;
+                position : static;
+                border : 5px solid whitesmoke;
+                box-shadow : 2px 4px 6px rgba(0,0,0,0.3);
+                transition : opacity 0.3s ease;
+            }
+            .section:nth-child(1) {opacity: 0.9}
+            .section:nth-child(2) {opacity: 0.85}
+            .section:nth-child(3) {opacity: 0.8}
+            .section:nth-child(4) {opacity: 0.75}
+            .section:nth-child(5) {opacity: 0.7}
+
+            .relative-box {
+                position : relative;
+                border : 5px dashed whitesmoke;
+                background-color: yellowgreen;
+            }
+            .relative-box .absolute-note {
+                position : absolute;
+                top: 10px;
+                right: 10px;
+                background-color: limegreen;
+                color : white;
+                padding : 5px 10px;
+                border-radius : 8px;
+                font-size: 0.9rem;
+                opacity : 0.95;
+                box-shadow : 1px 1px 4px rgba(0,0,0,0.2);
+                border: dashed 5px wheat;
+            }
+            .sticky-box{
+                position : sticky;
+                top: 70px;
+                background-color:yellowgreen;
+                border: 5px dotted whitesmoke;
+                opacity : 0.9;
+                padding : 25px;
+                box-shadow : 3px 3px 6px (0,0,0,0.3);
+            }
+            footer{
+                position:relative;
+                background-color: limegreen;
+                color:whote;
+                text-align:center;
+                padding : 15px;
+                font-size:1rem;
+                opacity:0.95;
+                border: dotted 5px white;
+            }
         </style>
     </head>
 
@@ -22,7 +97,7 @@
                 <div class="absolute note"> Absolute Position (note) </div>
             </section> 
 
-            <section class="sticky-box section">
+            <section class="sticky-box ">
                 <h2> Clean Environment</h2>
                 <p>This yellow box is <b>sticky</b> and semi-transparent!
                 Maintaining a sterile environment during surgery prevents infection and improves healing.</p>
