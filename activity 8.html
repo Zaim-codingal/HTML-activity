@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title> WILDLIFE </title>
+    <style>
+        *{
+         margin: 0;
+         padding: 0;
+         box-sizing:border-box;
+         font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+         }
+        body {
+            background : linear-gradient(to bottom, greenyellow, lightgreen );
+            color: black;
+            line-height: 1.5
+        }
+        #page {
+            max-width : 1100px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .hero{
+            text-align : center;
+            background : linear-gradient(135deg, green, lightgreen, greenyellow);
+            color : black;
+            padding : 60px 20px;
+            border-radius : 15px;
+            box-shadow : 0 5px 15px rgba(0,0,0,0,2);
+            animation : gradient-shift 8s ease-infinite;
+            background-size : 300% 300%
+        }
+
+        .hero h1{
+            font-size : 2.bron;
+            margin-bottom : 10px;
+            text-shadow : 2px 2px 5px rgba(0,0,0,0,3);
+        }
+
+        .hero.intro{
+            font-size : 1.2rem;
+            opacity : 0.95;
+        }
+
+        @keyframes gradientShift {
+            0% {background-position : 0% 50%}
+            50% {background-position : 100% 50% }
+            100% {background-position : 0% 50%}
+        }
+
+        nav {margin-top: 20px;}
+
+        nav a {
+            text-decoration : none;
+            color:black;
+            margin : 0 15px;
+            font-weight : 600;
+            padding : 8px 16px;
+            border-radius : 6px;
+            transition : all 0.3 s ease;
+        }
+
+        .card, section {
+            background: rgba(255, 255, 255, 0.8);
+            padding : 20px;
+            margin : 20px, 0;
+            border-radius : 12px;
+            box-shadow : 0 5px 10px rgba(0, 0, 0, 0.2);
+            transition : transform 0.3s ease, box-shadow 0.3s ease
+        }
+        .card:hover, .section:hover{
+            transform : translateY(-5px);
+            box-shadow : 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        h1, h2, h3 {
+            color : darkgreen;
+            text-shadow : 2px 2px 6px rgba(0, 0, 0, 0.2);
+            margin-bottom : 12px
+        }
+
+        p{
+            font-size : 1rem;
+            line-height : 1.6rem;
+            color : darkgreen;
+            text-shadow : 1px 1px 3px rgba (0,0,0,0,0,0.15)
+        }
+
+        ul {
+            margin-left: 20px;
+            padding-left: 10px;
+        }
+
+        li{
+            margin-bottom: 8px;
+            text-shadow : 1px 1px 2px rgba(0,0,0,0.15)
+        }
+
+        .muted{
+            color : darkgreen;
+            font-style : italic;
+            text-shadow : none;
+        }
+
+        nav a{
+            text-decoration : none;
+            color:white;
+            background : green;
+            margin : 0 8px;
+            font-weight : 600;
+            padding : 8px, 16px;
+            border-radius : 6px;
+            box-shadow : 0, 3px, 6px rgba(0,0,0,0.2); 
+            transition : all 0.3 s ease
+        }
+
+        nav a:hover{
+            background: darkgreen;
+            color : white;
+            transform : scale(1.05)
+
+        }
+
+        img{
+            max-width : 100%;
+            border-radius : 10px;
+            box-shadow : 0 4px 12px (0,0,0,0.25)
+        }
+        
+
+    </style>
+</head>
+
+<body>
+    <div id="page">
+        <header class="hero">
+            <h1> Wildlife & Its Wonders </h1>
+            <p class="intro">Explore a tiny showcase of amazing animals, habitats, and conservation tips </p>
+            <nav aria-label="Main Navigation" ; style="margin-top: 12px;">
+                <a href="#about"> About </a>
+                <a href="#species"> Species </a>
+                <a href="#Habitats"> Habitats </a>
+                <a href="#Coservation"> Conservation </a>
+            </nav>
+        </header>
+        <main class="grid">
+            <section id="content">
+
+                <section id="about" ; class="card">
+                    <h2> About Our WildLife </h2>
+                    <p> Wildlife refers to all non-domesticated plants, animals, and other organisms. This page uses a
+                        variety of CSS selectors to style typical webpage sections. </p>
+                </section>
+
+                <section id="species" ; class="card">
+                    <h2> Featured Species </h2>
+                    <p class="muted" ;> Click A Species To Learn One Quick Fact </p>
+                    <ul class="species-list" aria-label="list of species" style="margin-top:10px;">
+                        <li><strong>Lion</strong> — apex predator of the savannah. <span class="muted">(Panthera
+                                leo)</span></li>
+                        <li><strong>Elephant</strong> — the largest land mammal, known for intelligence and memory.
+                            <span class="muted">(Loxodonta africana)</span></li>
+                        <li><strong>Pangolin</strong> — scales protect it from predators; sadly threatened by
+                            trafficking. <span class="muted">(Manis spp.)</span></li>
+                        <li><strong>Sea Turtle</strong> — migratory marine reptile that faces plastic pollution. <span
+                                class="muted">(Cheloniidae)</span></li>
+                    </ul>
+
+                </section>
+
+                <section id="habitats" ; class="card no-border">
+                    <h2> Animals & Their Habitats </h2>
+                    <p> Habitats range from deserts and forests to oceans and wetlands. Hea;thy habitats mean helathy
+                        wildlife</p>
+                    <img src="Media/images.jfif" alt="Healthy Habitat Photo">
+                </section>
+
+                <section id="conservation" ; class="card">
+                    <h2> Conservation Tips </h2>
+                    <p>Small actions add up. Here are practical things you can do:</p>
+
+                    <ul>
+
+                        <li>Reduce single-use plastic.</li>
+
+                        <li>Support local conservation groups.</li>
+
+                        <li>Learn and spread awareness.</li>
+
+                        <li>Responsible ecotourism — observe, don't disturb.</li>
+
+                    </ul>
+                </section>
+
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>
