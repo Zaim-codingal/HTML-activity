@@ -13,31 +13,71 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-success">
         <div class="container-fluid">
             <a class="navbar-brand" href=" # "> Forest World </a>
-            <button class="bar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"></a>
                 <span class="navbar-toggler-icon"></span>
             </button>
             
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbarNav" ms-auto>
-                <li class="navbar_item"> <a class="nav-link active" href="#home"> Home </a></li>
-                <li class="navbar_item"> <a class="nav-link" href="#gallery"> Gallery </a></li>
-                <li class="navbar_item"> <a class="nav-link" href="#about"> About </a></li>
+            <ul class="navbar-nav" ms-auto>
+                <li class="navbar-item"> <a class="nav-link active" href="#home"> Home </a></li>
+                <li class="navbar-item"> <a class="nav-link" href="#gallery"> Gallery </a></li>
+                <li class="navbar-item"> <a class="nav-link" href="#about"> About </a></li>
             </ul>
         </div>
     </nav>
+    
+    <div id="forestCarousel" class="carousel slide mt-4" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#forestCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#forestCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#forestCarousel" data-bs-slide-to="2"></button>
+        </div>
 
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="Media/download (17).jfif" class="d-block w-100" height="450" alt="forest 1">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5> Enchanting Forest Path </h5>
+                    <p> A serene path through a lush green forest </p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="Media/download (16).jfif" class="d-block w-100" height="450" alt="forest 2">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5> Misty Morning Woods </h5>
+                    <p> Sunlight filtering through the morning mist in the forest </p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="Media/download (15).jfif" class="d-block w-100" height="450" alt="forest 3">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>  Snowy Taiga Forest </h5>
+                    <p> Cool chilly forest in a snowy region </p>
+                </div>
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#forestCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+
+        <button class="carousel-control-next" type="button" data-bs-target="#forestCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+        </button>
+
+    </div>
     <div class="text-center my-4">
         <div class="spinner-border text-success" role="status">
-            <p class="mt-4"> Loading... </p>
         </div>
+            <p class="mt-4"> Loading... </p>
     </div>
 
     <div class="container mt-5" id="gallery">
         <h2 class="text-center mb-4"> Forest Cards </h2>
-        <div class="row-g4">
+        <div class="row g-4">
             <div class="col-md-4">
-                <div class="card-shadow-lg">
-                    <img src="download(12).jfif" class="card-image-top" alt="forest 1">
+                <div class="card shadow-lg">
+                    <img src="Media/download (12).jfif" class="card-image-top" alt="forest 1">
                     <div class="card-body">
                         <h5 class="card-title"> Mesmerizing Forest </h5>
                         <p class="card-text">A peaceful forest with sunlight touching the leaves</p>
@@ -47,8 +87,8 @@
             </div>
 
             <div class="col-md-4">
-                <div class="card-shadow-lg">
-                    <img src="download(13).jfif" class="card-image-top" alt="forest 2">
+                <div class="card shadow-lg">
+                    <img src="Media/download (13).jfif" class="card-image-top" alt="forest 2">
                     <div class="card-body">
                         <h5 class="card-title"> Sun-side Forest </h5>
                         <p class="card-text">A Windy forest on the side of the coast</p>
@@ -58,8 +98,8 @@
             </div>
 
             <div class="col-md-4">
-                <div class="card-shadow-lg">
-                    <img src="download(14).jfif" class="card-image-top" alt="forest 3">
+                <div class="card shadow-lg">
+                    <img src="Media/download (14).jfif" class="card-image-top" alt="forest 3">
                     <div class="card-body">
                         <h5 class="card-title">  Wild Nature Trail </h5>
                         <p class="card-text">Walk through untouched nature and feel the air</p>
@@ -69,5 +109,32 @@
             </div>           
         </div>
     </div>
+
+    <div class="container mt-4">
+        <nav aria-label="Forest page navigation" class="d-flex justify-content-center">
+            <ul class="pagination">
+                <li class="page-item disabled"><a class="page-link" href="https://www.britannica.com/science/forest"> Previous </a></li>
+                <li class="page-item active"><a class="page-link" href="https://www.britannica.com/science/forest"> 1 </a></li>
+                <li class="page-item"><a class="page-link" href="https://www.britannica.com/science/forest"> 2 </a></li>
+                <li class="page-item"><a class="page-link" href="https://www.britannica.com/science/forest"> 3 </a></li>
+                <li class="page-item"><a class="page-link" href="https://www.britannica.com/science/forest"> Next </a></li>
+            </ul>
+        </nav>
+    </div>
+    
+    <div class="container my-5" id="about">
+        <div class="card p-4 shadow">
+            <h3 class="text-success"> About Forest World </h3>
+            <p> Forest World is a virtual sanctuary dedicated to the beauty and serenity
+                of forests around the globe. Our mission is to inspire appreciation for
+                these vital ecosystems through stunning imagery and informative content.
+                Whether you're a nature enthusiast, a student, or simply looking for a
+                peaceful escape, Forest World offers a glimpse into the wonders of the
+                forest. Join us in celebrating and preserving these natural treasures for
+                future generations. </p>
+        </div>
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
