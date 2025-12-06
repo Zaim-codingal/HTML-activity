@@ -8,7 +8,7 @@
     </head>
 
     <body class="bg-dark text-white">
-        <div class="container-fluid p-5 bg-bold text-center text-white">
+        <div class="container-fluid p-5 fw-bold text-center text-white">
             <h1 class="display-4 fw-bold">
                 The Space Explorer
             </h1>
@@ -57,19 +57,19 @@
                     const btn = document.createElement("button");
                     btn.className="btn btn-light m-1";
                     btn.innerText=planet.name;
-                    btn.onClick = () => {
+                    btn.onclick = () => {
                         output.innerHTML=`
                             <div class="card bg-secondary text-white mx-auto" style="width: 22rem">
                                 <img src="${planet.img}" class="card-img-top" alt="${planet.name}">
                                 <div class="card-body">
-                                    h3 class="card-title"> ${planet.name} </h3>
+                                    <h3 class="card-title"> ${planet.name} </h3>
                                     <p class="card-text"> ${planet.fact} </p>
                                 </div>   
                             </div>
 
                         `;
                     };
-                    buttonGroup.appendChild(btn);
+                    btnGroup.appendChild(btn);
                 })
         </script>
 
