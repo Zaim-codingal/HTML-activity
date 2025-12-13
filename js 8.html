@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insects of Pakistan — Array & Call Stack</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+    <div class="container mt-4">
+        <h2 class="text-center mb-3">Insects of Pakistan </h2>
+        <p class="text-center"> See Facts about some insects of Pakistan using (Array + Call Stack demo) </p>
+        <div class="text-center mb-3">
+            <button class="btn btn-primary" onClick="showFacts()"> Show Insects & Their Facts </button>
+        </div>
+
+        <div class="row" id="insectCards">
+            <!-- Insect cards will be dynamically inserted here -->
+        </div>
+
+        <script>
+            let insects = [
+{
+    name: "Bush Cricket (Jhenger)",
+    fact: "Bush crickets are found in Pakistan and many mimic leaves to stay hidden from predators.",
+    image: "https://cdn.buglife.org.uk/2022/04/Bog-Bush_cricket-c-Darren-Bradley-scaled.jpg"
+},
+
+{
+    name: "Lady Beetle (Anegleis cardoni)",
+    fact: "This beetle feeds on pests like aphids and helps protect crops naturally.",
+    image: 
+},
+
+{
+    name: "Small Lady Beetle (Scymnus nubilus)",
+    fact: "A tiny beetle found in Pakistan that preys on small pests harmful to plants."
+},
+
+{
+    name: "Potter Wasp (Anterhynchium abdominale)",
+    fact: "A wasp native to Pakistan that builds mud nests and hunts caterpillars for its larvae."
+},
+
+{
+    name: "Hydrilla Leaf-mining Fly (Hydrellia pakistanae)",
+    fact: "This tiny fly helps control invasive aquatic plants like hydrilla."
+},
+
+{
+    name: "Termite (Coptotermes heimi)",
+    fact: "A termite species found underground in Pakistan that can damage wood and structures."
+}
+        ];
+
+            function showFacts() {
+                let cardArea = document.getElementById("insectCards");
+                cardArea.innerHTML = "";
+                for (let i = 0; i < insects.length; i++) {
+                    cardArea.innerHTML += `
+                    <div class="col-lg-4 mb-3">
+                        <div class="card shadow">
+                            <img src="${insects[i].image}" class="card-img-top" alt="Insect Image">
+                            <div class="card-body">
+                                <h5 class="card-title"> ${insects[i].name} </h5>
+                                <p class="card-text"> <strong> FACT: </strong> ${insects[i].fact} </p>
+                            </div>
+                        </div>
+                    </div>
+                    `;                   
+            }        
+        }
+        </script>
+
+    </div>
+</body>
