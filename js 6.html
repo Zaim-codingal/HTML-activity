@@ -145,7 +145,7 @@
                     });
                 }
 
-                document.getElementById("btnHighlight").onclick = () => {
+                document.getElementById("textHighlight").onclick = () => {
                     const p = document.getElementById("antarcticaText");
                     const regex = /Antarctica/gi;
                     p.innerHTML = p.textContent.replace(regex, (m) => 
@@ -154,13 +154,13 @@
 
                 document.getElementById("SignUp").onsubmit = (e) => {
                     e.preventDefault();
-                    const nameInput = document.getElementById("nameInput").value.trim();
-                    const emailInput = document.getElementById("emailInput").value.trim();
+                    const nameInput = document.getElementById("NameInput").value.trim();
+                    const emailInput = document.getElementById("EmailInput").value.trim();
                     const formMessage = document.getElementById("formMessage");
                     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                    if (name.length == 0) {
-                        msg.textContent = "Please enter your name.";
-                        msg.className = "text-danger fw.bold";
+                    if (nameInput.length == 0) {
+                        formMessage.textContent = "Please enter your name.";
+                        formMessage.className = "text-danger fw.bold";
                         return;
                     } 
                     if (!emailPattern.test(emailInput)) {
@@ -169,7 +169,7 @@
                         return;
                     }
                     formMessage.textContent = `Thank you, ${nameInput.toUpperCase()}, for signing up!`;
-                    msg.className = "text-success fw-bold";
+                    formMessage.className = "text-success fw-bold";
                 };
 
                 document.getElementById("btnShowTemp").onclick = () => {
