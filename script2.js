@@ -28,8 +28,9 @@ function validatePassword() {
 }
 
 function validateAge() {
-    if (Number(age.value) >= 18) { 
-        setSuccess(age;
+    
+    if (age.value >= 13 && age.value <= 14) {
+        setSuccess(age);
         return true;
     } else {
         setError(age);
