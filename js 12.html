@@ -53,7 +53,7 @@
                     this.rollNo = rollNo;
                     this.marks = marks;
                     this.grade = grade;
-                }
+                };
             
 
             getResult() {
@@ -62,39 +62,36 @@
             }
 
             getNewGrade() {
-                if (this.marks >= 50)
-                newGrade = 'New Grade :' + (this.grade + 1);
-                return newGrade;
-                elseif (this.marks < 50)
-                newGrade = 'New Grade :' + this.grade;
-                return newGrade;
+                let newGrade;
+                if (this.marks >= 50) {
+                    newGrade = 'New Grade :' + (this.grade + 1);
+                }
+
+                else (this.marks < 50) {
+                newGrade = 'New Grade :' + this.grade; }
+
+                return newGrade;       
             }
 
             getGrade() {
                 if (this.marks >= 90) return 'A+';
-                elseif (this.marks >= 80) return 'A';
-                elseif (this.marks >= 70) return 'B';
-                elseif (this.marks >= 60) return 'C';
-                elseif (this.marks >= 50) return 'D';
+                else if (this.marks >= 80) return 'A';
+                else if (this.marks >= 70) return 'B';
+                else if (this.marks >= 60) return 'C';
+                else if (this.marks >= 50) return 'D';
                 else return 'F';
             }
 
             
             display() {
                 return `
-
                     <div class="card">
-
                     <h3>${this.name}</h3>
-
-                    <p>Roll No: ${this.roll}</p>
-
+                    <p>Roll No: ${this.rollNo}</p>
                     <p>Marks: ${this.marks}</p>
                     <p>Result: ${this.getResult()}</p>
                     <p>Grade: ${this.getGrade()}</p>
-
             </div>
-
             `;
 
         }
