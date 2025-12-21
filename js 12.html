@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> STUDENT REPORT GENERATOR </title>
+        <style>
+            body{
+                font-family: Arial, sans-serif;
+                padding: 20px;
+                background-color: #f4f6f8;
+            }
+
+            .card{
+                background-color: #fff;
+                border-radius: 8px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                padding: 15px;
+                margin: 10px 0;
+            }
+
+            input, button{
+                padding: 8px;
+                margin: 5px 0;
+                width: 200px;
+            }
+
+            button{
+                cursor: pointer;
+                background-color: #007BFF;
+                color: white;
+                border: none;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h2> Student Report Generator </h2>
+        <input id="name" placeholder="Enter Student's Name">
+        <input id="roll no." placeholder="Enter Roll No.">
+        <input id="marks" placeholder="Enter Marks">
+        <input id="grade" placeholder="Enter Current Grade">
+
+        <br>        
+        <button onclick="addStudentReport()"> Add student report card </button>
+        <div id="output">
+            <!-- Student report cards will be displayed here -->
+        </div>
+
+        <script>
+            class Student {
+                constructor(name, rollNo, marks, grade) {
+                    this.name = name;
+                    this.rollNo = rollNo;
+                    this.marks = marks;
+                    this.grade = grade;
+                }
+            }
+
+            getResult() {
+                if (this.marks >= 50) return 'PASS';
+                else return "FAIL" ;
+            }
+
+            getNewGrade() {
+                if (this.marks >= 50)
+                newGrade = 'New Grade :' + (this.grade + 1);
+                return newGrade;
+                elseif (this.marks < 50)
+                newGrade = 'New Grade :' + this.grade;
+                return newGrade;
+            }
+
+            getGrade() {
+                if (this.marks >= 90) return 'A+';
+                else if (this.marks >= 80) return 'A';
+                else if (this.marks >= 70) return 'B';
+                else if (this.marks >= 60) return 'C';
+                else if (this.marks >= 50) return 'D';
+                else return 'F';
+            }
+
+
+            function addStudentReport() {
+                let name = document.getElementById('name').value;
+                let rollNo = document.getElementById('roll no.').value;
+                let marks = document.getElementById('marks').value;
+                let grade = document.getElementById('grade').value;
+                if(name === "" || rollNo === "" || marks === "" || grade === "") {
+                    alert("Please fill all fields.");
+                    return;
+                }
+            }
+
+            let student = new Student(name, rollNo, Number(marks), Number(grade));
+            document.getElementById('output').innerHTML += student.display();
+            document.getElementById('name').value = "";
+            document.getElementById('roll no.').value = "";
+            document.getElementById('marks').value = "";
+            document.getElementById('newGrade').value = "";
+
+        </script>
+    </body>
+</html>
