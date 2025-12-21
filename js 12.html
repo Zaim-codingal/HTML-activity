@@ -36,7 +36,7 @@
     <body>
         <h2> Student Report Generator </h2>
         <input id="name" placeholder="Enter Student's Name">
-        <input id="roll no." placeholder="Enter Roll No.">
+        <input id="roll" placeholder="Enter Roll No.">
         <input id="marks" placeholder="Enter Marks">
         <input id="grade" placeholder="Enter Current Grade">
 
@@ -54,7 +54,7 @@
                     this.marks = marks;
                     this.grade = grade;
                 }
-            }
+            
 
             getResult() {
                 if (this.marks >= 50) return 'PASS';
@@ -72,31 +72,52 @@
 
             getGrade() {
                 if (this.marks >= 90) return 'A+';
-                else if (this.marks >= 80) return 'A';
-                else if (this.marks >= 70) return 'B';
-                else if (this.marks >= 60) return 'C';
-                else if (this.marks >= 50) return 'D';
+                elseif (this.marks >= 80) return 'A';
+                elseif (this.marks >= 70) return 'B';
+                elseif (this.marks >= 60) return 'C';
+                elseif (this.marks >= 50) return 'D';
                 else return 'F';
             }
 
+            
+            display() {
+                return `
 
+                    <div class="card">
+
+                    <h3>${this.name}</h3>
+
+                    <p>Roll No: ${this.roll}</p>
+
+                    <p>Marks: ${this.marks}</p>
+                    <p>Result: ${this.getResult()}</p>
+                    <p>Grade: ${this.getGrade()}</p>
+
+            </div>
+
+            `;
+
+        }
+
+        }
             function addStudentReport() {
                 let name = document.getElementById('name').value;
-                let rollNo = document.getElementById('roll no.').value;
+                let rollNo = document.getElementById('roll').value;
                 let marks = document.getElementById('marks').value;
-                let grade = document.getElementById('grade').value;
+                let grade = document.getElementById('newGrade').value;
                 if(name === "" || rollNo === "" || marks === "" || grade === "") {
                     alert("Please fill all fields.");
                     return;
                 }
-            }
+            
 
             let student = new Student(name, rollNo, Number(marks), Number(grade));
             document.getElementById('output').innerHTML += student.display();
             document.getElementById('name').value = "";
-            document.getElementById('roll no.').value = "";
+            document.getElementById('roll').value = "";
             document.getElementById('marks').value = "";
             document.getElementById('newGrade').value = "";
+        }
 
         </script>
     </body>
