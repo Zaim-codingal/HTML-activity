@@ -71,8 +71,9 @@
                             <b>Marks:</b> ${student.marks}
                          </div>`;
             });
-        }
+        
         document.getElementById("output").innerHTML = html;
+        }
 
         function sortReports() {
             let sorted = [...students].sort((a, b) => b.marks - a.marks);
@@ -90,7 +91,7 @@
                 else grade = 'Fail';
                 return {...student, grade: grade};
             })
-        }
+        
         
         let html = "";
         graded.forEach(student => {
@@ -102,7 +103,7 @@
                      `;
         });
         document.getElementById("output").innerHTML = html;
-
+    }
         display(students);
         </script>
     </body>
