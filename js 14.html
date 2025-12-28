@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> JS DETAILED CONCEPTS </title>
+        <style>
+        </style>
+    </head>
+    <body>
+        <h1>JAVASCRIPT DETAILED CONCEPTS</h1>
+
+        <div class="card">
+            <h2> TYPE CASTING </h2>
+            <p> enter a number and it will be converted to a string.</p>
+            <input id="NumInput">
+            <button onClick="typeCast()">Convert</button>
+            <div id="typeResult" class="result"></div>
+        </div>
+
+        <div class="card">
+            <h2> Regular Expressions </h2>
+            <p> check if text contains only alphabets </p>
+            <input id="regexInput">
+            <button onClick="checkRegex">
+                Check
+            </button>
+            <div id="regexResult" class="result"></div>
+
+            <div class="card">
+                <h2>Search and Replace</h2>
+                <p> Text: Allah is always with You </p>
+                <button onClick="replaceText()"> Replace 'Allah' with 'Allah(SWT)' </button>
+                <div id="replaceResult"></div>
+            </div>
+
+            <div class="card">
+                <h2> STring Functions </h2>
+                <P> this will use length, toUppercase(), & slice() </P>
+                <input id="stringInput" placeholder="enter Text">
+                <button onClick="stringFunctions()"> Process String </button>
+                <div id="stringResult"></div>
+            </div>
+
+            <div class="card">
+                <h2> Arrow Functions </h2>
+                <p> Find the sqaure of a certain number</p>
+                <input id="sqaureInput">
+                <button onClick="showSquare()"> Find Square </button>
+                <div id="squareResult"></div>
+            </div>
+
+            <div class="card">
+                <h2> Error Handling </h2>
+                <p> enter only numbers, if not, an error will be shown</p>
+                <input id="errorInput">
+                <button onClick="handleError()"> Check </button>
+                <div id="errorResult"></div>
+            </div>
+
+            <script>
+                function typeCast(){
+                     let value=document.getElementById("numInput").value;
+                        let  number=Number(value);
+                        document.getElementById("typeResult").innerHTML=
+                        "Converted value: " +typeof(number) + " | Value=" + number
+                }
+
+                function checkRegex() {
+                    let text= document.getElementById("regexInput").value;
+                    let pattern = /^[A-Za-z]+$/;
+
+                    if(pattern.test(text)) {
+                        document.getElementById("regexResult").innerHTML = "Valid : Only Alpahabets"
+                    }else{
+                        document.getElementById("regexResult").innerHTML = "Invalid Input"
+                    }
+                }
+
+                function replaceText(){
+                    let sentence = "Allah is always with You";
+                    let updated = sentence.replace("Allah", "Allah(SWT)");
+                    document.getElementById("replaceResult").innerHTML = updated;
+                }
+
+                function stringFunctions(){
+                    let str=document.getElementById("stringInput").value;
+                    let result= `
+                        Length: ${str.length} <br>
+                        Uppercase: ${str.toUpperCase()} <br>
+                        Slice (0,5): ${str.slice(0,5)}
+                    `
+                    document.getElementById("stringResult").innerHTML = result;
+                }
+
+                const square = (num) => num * num;
+                function showSquare() {
+                    let n=document.getElementById("squareInput").value;
+                    document.getElementById("squareResult").innerHTML =
+                    "Square =" + square(n);
+                }
+
+                function handleError() {
+                    let value = document.getElementById("errorInput").value;
+                    try {
+                        if(isNaN(value)) {
+                            throw "Not a Number Error";
+                        }
+                            document.getElementById("errorResult").innerHTML = "Valid Input";
+                        }
+                    catch(err) {
+                        document.getElementById("errorResult").innerHTML = err;
+                        "Error: " + err;
+                    }
+                }
+
+                
+                
+            </script>
+        </div>
+    </body>
+</html>
