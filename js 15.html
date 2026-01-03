@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> JSON CONCEPTS </title>
+        <style>
+            body{
+                font-family: Arial, sans-serif;
+                padding: 20px;
+                background-color: #eef2f7;
+            }
+            .card{
+                background-color: #fff;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+                padding: 20px;
+                margin: 15px auto;
+            }
+            h1,h2{
+                text-align: center;
+                color: #333;
+            }
+            button{
+                background-color: #4a90e2;
+                color: white;
+                border: none;
+                padding: 8px 15px;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            .output{
+                margin-top: 10px;
+                font-weight: bold
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>JSON CONCEPT</h1>
+        <div class="card">
+            <h2> JSON example</h2>
+            <button onClick="showJSON()"> Show JSON student Data </button>
+            <div id="jsonOutput" class="output"></div>
+        </div>
+
+        <div class="card">
+            <h2> CallBack example </h2>
+            <button onClick="callbackExample()"> Run CallBack Example </button>
+            <div id="callbackOutput"></div>
+        </div>
+
+        <div>
+            <h2> Promises Example</h2>
+            <button onclick="promiseExample()"> Check Promise Example </button>
+            <div id="promiseOutput" class="output"></div>
+        </div>
+        
+        <div class="card">
+            <h2> Async/Await Example </h2>
+            <button onClick="asyncExample()">   Load Async/Await Data </button>
+            <div id="asyncOutput" class="output"></div>
+        </div>
+
+        <script>
+            function showJSON() {
+                let student = {
+                    "name": "Ali",
+                    "age": 13,
+                    "grade": "8th"
+                };
+                document.getElementById("jsonOutput").innerText = 
+                "Name :" + student.name + ", Age: " + student.age + ", Grade: " + student.grade;
+            }
+
+            function displayMessage(name) {
+                document.getElementById("callbackOutput").innerHTML = "Hello, " + name + "! This is a callback example.";
+            }
+
+            function callbackExample() {
+                let name = "Sara";
+                displayMessage(name);
+            }
+        </script>
+    </body>
+</html>

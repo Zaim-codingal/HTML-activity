@@ -20,7 +20,7 @@
             <h2> Regular Expressions </h2>
             <p> check if text contains only alphabets </p>
             <input id="regexInput">
-            <button onClick="checkRegex">
+            <button onClick="checkRegex()">
                 Check
             </button>
             <div id="regexResult" class="result"></div>
@@ -43,7 +43,7 @@
             <div class="card">
                 <h2> Arrow Functions </h2>
                 <p> Find the sqaure of a certain number</p>
-                <input id="sqaureInput">
+                <input id="squareInput">
                 <button onClick="showSquare()"> Find Square </button>
                 <div id="squareResult"></div>
             </div>
@@ -58,7 +58,7 @@
 
             <script>
                 function typeCast(){
-                     let value=document.getElementById("numInput").value;
+                     let value=document.getElementById("NumInput").value;
                         let  number=Number(value);
                         document.getElementById("typeResult").innerHTML=
                         "Converted value: " +typeof(number) + " | Value=" + number
