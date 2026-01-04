@@ -48,8 +48,8 @@
             <div id="callbackOutput"></div>
         </div>
 
-        <div>
-            <h2> Promises Example</h2>
+        <div class="card">
+            <h2> Promises Example </h2>
             <button onclick="promiseExample()"> Check Promise Example </button>
             <div id="promiseOutput" class="output"></div>
         </div>
@@ -78,6 +78,32 @@
             function callbackExample() {
                 let name = "Sara";
                 displayMessage(name);
+            }
+
+            function promiseExample() {
+                let promise = new Promise (function(resolve, reject) {
+                    let success = true; 
+                    if(success) {
+                        resolve("Promise resolved successfully!");
+                    } else {
+                        reject("Promise rejected.");
+                    }
+                });
+                promise.then(function(result) {
+                    document.getElementById("promiseOutput").innerHTML = result;
+                })
+            }
+
+            async function asyncExample() {
+                let message = await getData();
+                document.getElementById("asyncOutput").innerHTML = message;
+            }
+            function getData() {
+                return new Promise(function(resolve) {
+                    setTimeout(function() {
+                        resolve("Data loaded using Async/Await!");
+                    }, 2000);
+                });
             }
         </script>
     </body>
