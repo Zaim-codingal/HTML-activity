@@ -33,12 +33,11 @@
                         </div>
                     </div>
 
-                    <div class="card-shadow d-none" id="calculator">
+                    <div class="card shadow d-none" id="calculator">
                         <div class="card-body">
                             <h4 class="text-center mb-3"> STEP 2: Calculator</h4>
                             <input type="text" id="result" class="form-control mb-3" readonly>
-                        </div>
-                    </div>
+
                     <div class="row">
 
                     <div class="col-9">
@@ -57,10 +56,60 @@
                             <div class="col-4"> <button class="btn btn-dark btn-calc" onclick="setValue('3')">3</button></div>
 
                             <div class="col-8"> <button class="btn btn-dark btn-calc" onclick="setValue('0')">0</button></div>
+                            <div class="col-4"> <button class="btn btn-dark btn-calc" onclick="setValue('.')">.</button></div>
                         </div>
                     </div>
-                </div>                
+                    <div class="col-3">
+                        <button class="btn btn-warning btn-calc" onClick="setValue('/')">/</button>
+                        <button class="btn btn-warning btn-calc" onClick="setValue('*')">*</button>
+                        <button class="btn btn-warning btn-calc" onClick="setValue('-')">-</button>
+                        <button class="btn btn-warning btn-calc" onClick="setValue('+')">+</button>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-6">
+                        <button class="btn btn-danger btn-calc" onClick="clearScreen()"> CLEAR </button>
+                    </div>
+                    <div class="col-6">
+                        <button class="btn btn-success btn-calc" onClick="calculate()"> = </button>
+                    </div>
+                </div>
+            </div>
             </div>
         </div>
+        </div>
+        </div>
+        
+        <script>
+            function validateForm() {
+                let form = document.getElementById("userForm");
+                let msg = document.getElementById("msg");
+                if (form.checkValidity()) {
+                    msg.innerHTML = "Login Successful! Calclator Unlocked.";
+                    msg.className = "text-success";
+                    document.getElementById("calculator").classList.remove("d-none");
+                } else {
+                    form.reportValidivity()            
+                } 
+            }
+
+            function setValue(val) {
+                document.getElementById("result").value += val;
+            }
+
+            function clearScreen() {
+                document.getElementById("result").value = "";
+            }
+
+            function calculate() {
+                let box = document.getElementById("result")
+                try {
+                    box.value = eval(box.value);
+                } catch {
+                    box.value = "Error"
+                }
+            }
+
+        </script>
     </body>
 </html>
