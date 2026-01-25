@@ -19,13 +19,14 @@
         color: white;
         padding: 90px 20px;
         text-align: center;
+        margin-top: 70px;
     }
 
     @keyframes heroWave {
         0% {background-position: 0% 50%;}
         50% {background-position: 100% 50%;}
         100% {background-position: 0% 50%;}
-    };
+    }
 
     .section-padding {
         padding: 70px 20px;
@@ -47,7 +48,7 @@
         transition : background-color 0.4s ease, box-shadow 0.4s ease;
     }
 
-    .navbar .scrolled {
+    .navbar.scrolled {
         background-color: #003049 !important;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     }
@@ -73,21 +74,14 @@
     transition : transform 0.4s ease, filter 0.4s ease;
 }
     .un-logo:hover {
-        transform: scale(1.1), rotate(4deg);
+        transform: scale(1.1) rotate(4deg);
         filter: brightness(1.2)
     }
 
     #social-media {
-        background: linear-gradient(to right, #00b4d8, #90e0ef);
+        background: linear-gradient(to right, #003049, #005f73);
     }
 
-    #social-media h4 {
-        color: #0dcaf0;
-    }
-
-    #social-media h1 {
-        color : #fff;
-    }
 
     .media_link {
         padding : 1rem;
@@ -113,7 +107,7 @@
         color : #003049;
     }
 
-    
+
     
 
 
