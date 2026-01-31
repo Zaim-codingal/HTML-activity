@@ -93,6 +93,13 @@
                 font-size: 0.85rem;
             }
 
+            footer {
+                text-align: center;
+                margin-top: 10px;
+                font-size: 0.8rem;
+                opacity: 0.9;
+            }
+
         </style>
     </head>
 
@@ -112,10 +119,77 @@
             <strong> Transaction History </strong>
             <ul id="historyList"></ul>
         </div>
-        <footer> Min balance 100$ | Daily Withdrawal Limit: $500 </footer>
+        <footer> Min balance 50$ | Daily Withdrawal Limit: $500 </footer>
         <div>
             <script>
+                let balance = 0;
+                let dailyWithdrawn = 0;
+                const MINBALANCE = 100;
+                const DAILY_LIMIT = 500;
+                const balanceDisplay = document.getElementById("balanceDisplay");
+                const amountInput = document.getElementById("amount");
+                const depositBtn = document.getElementById("depositbtn");
+                const withdrawBtn = document.getElementById("withdrawbtn");
+                const resetBtn = document.getElementById("resetbtn");
+                const HistoryList = document.getElementById("historyList");
+                const clearHistoryBtn = document.getElementById("clearHistorybtn");
 
+                function updateDisplay() {
+                    balanceDisplay.textContent = `Balance : $${balance.toFixed(2)}`;
+                    withdrawBtn.disabled = balance <= 0;
+                }
+
+                function addHistory(message) {
+                    const li = document.createElement("li");
+                    const time= new Date().toLocaleTimeString();
+                    li.textContent = `[${time}] ${message}`;
+                    HistoryList.prepend(li);
+                }
+
+                depositBtn.addEventListener("click", () => {
+                    const amount = parseFloat(amountInput.value);
+                    if (amount > 0) {
+                        balance += amount;
+                        updateDisplay();
+                        addHistory(`Deposited $${amount}`);
+                        updateDisplay();
+                        amountInput.value = "";
+                    } else {
+                        alert("Enter a valid deposit amount.");
+                    }
+                });
+
+                withdrawBtn.addEventListener("click", () => {
+                    const amount = parseFloat(amountInput.value);
+                    if (amount <= 0) {
+                    alert("Enter a valid withdrawal amount.");
+                    }
+                    
+                    if (amount > balance - MINBALANCE) {
+                        alert("Maintain minimum balance of $50.");
+                        return;
+                    }
+                    if (dailyWithdrawn + amount > DAILY_LIMIT) {
+                        alert("Exceeds daily withdrawal limit of $500.");
+                        return;
+                    }
+                    balance -= amount;
+                    dailyWithdrawn += amount;
+                    addHistory(`Withdrew $${amount}`);
+                    updateDisplay();
+                })
+
+                resetBtn.addEventListener("click", () => {
+                    balance = 0;
+                    dailyWithdrawn = 0;
+                    updateDisplay();
+                    addHistory("Account reset");
+                })
+
+                clearHistoryBtn.addEventListener("click", () => {
+                    HistoryList.innerHTML = "";
+                })
+            
             </script>
         </div>
     </body>
