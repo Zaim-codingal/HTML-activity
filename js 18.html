@@ -17,6 +17,42 @@
                 align-items: center;
             }
 
+            .page {
+                display: none;
+                width: 380px;
+                background: rgba(255, 255, 255, 0.15);
+                border-radius: 20px;
+                backdrop-filter: blur(12px);
+                box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+                padding: 25px;
+                text-align: center;
+            }
+
+            .page.active {
+                display: block;
+            }
+
+            button {
+                width: 100%;
+                padding: 12px;
+                border-radius: 10px;
+                border: none;
+                font-weight: 600;
+                color: white;
+                cursor: pointer;
+                margin-top: 8px;
+            }
+
+            input {
+                width: 100%;
+                padding: 12px;
+                border-radius: 10px;
+                border: none;
+                margin-bottom: 10px;
+                font-size: 1rem;
+                text-align: center;
+            }
+
             #bankApp {
                 width : 380px;
                 background: rgba(255, 255, 255, 0.15);
@@ -104,24 +140,74 @@
     </head>
 
     <body>
+         <div id="homePage" class="page active">
+            <h1> Welcome to Student Bank App </h1>
+            <p> Safe . Simple . Secure </p>
+            <button class="primary" onclick="showPage(loginPage)">Login</button>
+         </div>
+
+         <div id="loginPage" class="page">
+            <h1>Login to Student Bank App</h1>
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <button class="primary" onclick="login()">Login</button>
+            <button class="secondary" onclick="showPage(homePage)">Back</button>
+            <p id="loginError" style="color: #ffdddd; font-size: 0.9rem;"></p>
+         </div>
+
+        
+
         <div id="bankApp">
             <h1> Student Bank Application </h1>
             <div id="balanceDisplay"> Balance: $0 </div>
-        </div>
+
         <div class="controls">
             <input type="number" id="amount" placeholder="enter amount">
             <button id="depositbtn"> Deposit </button>
             <button id="withdrawbtn"> Withdraw </button>
             <button id="resetbtn"> Reset </button>
             <button id="clearHistorybtn"> Clear Transaction History </button>
+            <button onclick="logout()"> Logout </button>
         </div>
         <div id="transactionHistory">
             <strong> Transaction History </strong>
             <ul id="historyList"></ul>
         </div>
         <footer> Min balance 50$ | Daily Withdrawal Limit: $500 </footer>
-        <div>
+
+    </div>
             <script>
+                function showPage(pageId) {
+                    document.querySelectorAll('.page').forEach(p => p.classList.remove('page-active'));         
+                    document.getElementById(pageId).classList.add('page-active');
+                }
+
+                const users = {
+                    "student1": "1234",
+                    "student2": "password12",
+                    "student3": "mypassword"
+                }
+
+                function login() {
+                    const username = document,getElementById("username").value;
+                    const password = document.getElementById("password").value;
+                    const loginError = document.getElementById("loginError");
+                    if (!username || !password) {
+                        error.textContent = "Please enter both username and password.";
+                        return;
+                    }
+                    if (users[username]===username && users[password] === password) {
+                        showPage(bankApp);
+                    } else {
+                        error.textContent = "Invalid username or password.";
+                    }
+                }
+
+                function logout() {
+                    showPage(homePage);
+                }
+                
+
                 let balance = 0;
                 let dailyWithdrawn = 0;
                 const MINBALANCE = 100;
@@ -191,5 +277,5 @@
                 })
             
             </script>
-        </div>
     </body>
+
